@@ -1,46 +1,46 @@
-# Dual ESC System – STM32L431-Based Motor Controller
-
-This repository contains the complete schematic design for a dual-channel Electronic Speed Controller (ESC) system based on the **STM32L431KC** microcontroller. Each ESC unit is designed to drive a three-phase brushless DC motor with precise control, real-time current sensing, and reliable protection features.
-
-## Overview
-
-The system consists of two identical ESC channels, each including:
-
-- **STM32L431KC** – Microcontroller for control logic, PWM generation, and feedback processing.
-- **FD6288 Gate Driver** – Drives MOSFETs to control the three motor phases (A, B, and C).
-- **Phase Outputs** – H-bridge power stage for three-phase BLDC motor control.
-- **Current Sense Circuit** – Monitors motor current for protection and closed-loop operation.
-- **Voltage & Current Monitor** – Provides real-time feedback for safe and efficient motor control.
-- **Motor Pad** – Interface to connect the motor windings.
-- **Battery Pad** – Power input for each ESC unit.
-- **Debug Interface** – SWD interface for firmware development and system debugging.
-
-## Power Section
-
-The power management section generates the following regulated outputs:
-
-- **3.3V**
-- **5V**
-- **8.4V**
-- **12V**
-
-These power rails are isolated and distributed to logic and power components to ensure stability and reliability.
-
-## Applications
-
-- Drones (multirotor propulsion)
-- Robotics and automation
-- Electric mobility solutions
-- Multi-motor control systems
-
-## Files Included
-
-- `*.sch` – KiCad schematic files
-- `README.md` – Project documentation
-- `NOTES` – Functional block descriptions
-
-## Author
-
-**Muddessir Arif**  
-📧 muddessirarif140174@gmail.com  
+________________________________________
+Dual ESC System – STM32L431-Based Motor Controller
+This document describes the schematic design for a dual Electronic Speed Controller (ESC) system based on the STM32L431KC microcontroller. Each ESC is capable of driving a three-phase brushless motor with current sensing, voltage monitoring, and dedicated gate drivers.
+________________________________________
+Overview
+The design is split into two identical ESC channels, each consisting of the following:
+•	STM32L431KC
+Microcontroller responsible for control logic, PWM generation, and feedback processing.
+•	FD6288 Gate Driver
+Drives the power MOSFETs for each motor phase (A, B, and C).
+•	Phase Outputs
+Three-phase H-bridge output stages for motor control.
+•	Current Sense Circuit
+Measures motor phase current for protection and closed-loop control.
+•	Voltage & Current Monitor
+Provides operating feedback to the microcontroller for safety and performance tuning.
+•	Motor Pad
+Connection point to the motor.
+•	Battery Pad
+Power input for each ESC.
+Each ESC also includes a debug interface using the standard SWD protocol for firmware development and system diagnostics.
+________________________________________
+Power Section
+The system includes onboard power regulation for:
+•	3.3V
+•	5V
+•	8.4V
+•	12V
+Power is isolated and distributed between control and drive logic, ensuring clean and stable operation across the system.
+________________________________________
+Applications
+This design is ideal for:
+•	Multirotor drones and UAV propulsion
+•	Robotics and automation systems
+•	Electric vehicles and mobility platforms
+•	Any multi-motor embedded control system requiring precision and safety
+________________________________________
+Included Files
+•	Full KiCad schematic (.sch)
+•	Block-level schematic diagram
+•	Functional documentation for each subsystem
+________________________________________
+Author
+Muddessir Arif
 📞 +92 340 0586446
+📧 muddessirarif140174@gmail.com
