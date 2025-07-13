@@ -1,41 +1,46 @@
 # Dual ESC System – STM32L431-Based Motor Controller
 
-This repository contains the schematic design for a dual Electronic Speed Controller (ESC) system built around the STM32L431KC microcontroller. Each ESC unit is capable of driving a three-phase brushless motor with current sensing, voltage monitoring, and dedicated gate drivers.
+This repository contains the complete schematic design for a dual-channel Electronic Speed Controller (ESC) system based on the **STM32L431KC** microcontroller. Each ESC unit is designed to drive a three-phase brushless DC motor with precise control, real-time current sensing, and reliable protection features.
 
 ## Overview
 
-The design is split into two identical ESC channels, each containing:
+The system consists of two identical ESC channels, each including:
 
-- **STM32L431KC**: Main microcontroller responsible for control logic, PWM generation, and feedback processing.
-- **FD6288 Gate Driver**: Drives the power MOSFETs for each motor phase (A, B, and C).
-- **Phase Outputs**: Three-phase H-bridge output stages for motor control.
-- **Current Sense Circuit**: Measures motor phase current for protection and closed-loop control.
-- **Voltage & Current Monitor**: Feeds key operating data to the MCU for fault handling and performance optimization.
-- **Motor Pad**: Output connection to the BLDC motor.
-- **Battery Pad**: Input connection for power supply.
-
-Each ESC includes a **debug interface** for firmware development and system diagnostics using standard SWD tools.
+- **STM32L431KC** – Microcontroller for control logic, PWM generation, and feedback processing.
+- **FD6288 Gate Driver** – Drives MOSFETs to control the three motor phases (A, B, and C).
+- **Phase Outputs** – H-bridge power stage for three-phase BLDC motor control.
+- **Current Sense Circuit** – Monitors motor current for protection and closed-loop operation.
+- **Voltage & Current Monitor** – Provides real-time feedback for safe and efficient motor control.
+- **Motor Pad** – Interface to connect the motor windings.
+- **Battery Pad** – Power input for each ESC unit.
+- **Debug Interface** – SWD interface for firmware development and system debugging.
 
 ## Power Section
 
-The system features onboard regulation for:
+The power management section generates the following regulated outputs:
 
-- **3.3V, 5V, 8.4V, and 12V** outputs
-- Independent power rails for control and drive logic
-- Modular layout for clean signal separation
+- **3.3V**
+- **5V**
+- **8.4V**
+- **12V**
+
+These power rails are isolated and distributed to logic and power components to ensure stability and reliability.
 
 ## Applications
 
-This dual ESC design is intended for drone propulsion systems, robotic platforms, or any multi-motor setup requiring precise, reliable control with integrated protection features.
+- Drones (multirotor propulsion)
+- Robotics and automation
+- Electric mobility solutions
+- Multi-motor control systems
 
-## Included Files
+## Files Included
 
-- Full KiCad schematic (.sch)
-- Block-level schematic layout
-- Functional notes for each section
+- `*.sch` – KiCad schematic files
+- `README.md` – Project documentation
+- `NOTES` – Functional block descriptions
 
 ## Author
 
-[Muddessir Arif]  
-[+92340-0586446]
-[muddessirarif140174@gmail.com]
+**Muddessir Arif**  
+📧 muddessirarif140174@gmail.com  
+📞 +92 340 0586446
